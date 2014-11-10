@@ -28,6 +28,18 @@
     <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js"></script>
   <![endif]-->
 
+  {{#if user.stylesheet}}
+  <style type="text/css">
+    {{user.stylesheet}}
+  </style>
+  {{/if}}
+
+  {{#if user.script}}
+  <script>
+    {{{user.script}}}
+  </script>
+  {{/if}}
+
 </head>
 <body>
 
