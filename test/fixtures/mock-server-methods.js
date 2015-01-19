@@ -64,6 +64,12 @@ module.exports = function (server) {
       }
     },
 
+    email: {
+      send: function (mail, next) {
+        return next(null, mail);
+      }
+    },
+
     npme: {
       createCustomer: function (data, next) {
         return next(null, enterprise.newUser);
