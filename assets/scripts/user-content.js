@@ -27,17 +27,8 @@ var handleAnchorLinks = function() {
 }
 
 var goToAnchor = function(anchor) {
-
-  console.log("anchor", anchor)
-
   var prefix = 'user-content-'
-  var el = $('#' + prefix + anchor + ' a')
-
-  if (!el.length) return true
-
-  var simpleAnchorUrl = window.location.href
-  window.location.hash = prefix + anchor
-  history.replaceState(null, null, simpleAnchorUrl)
-
+  var el = $('#' + prefix + anchor)
+  document.body.scrollTop=el.offset().top
   return false
 }
