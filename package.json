@@ -7,10 +7,11 @@
     "start": "node server.js",
     "test": "lab --verbose --colors --ignore '$$bole,__grim__' --assert code",
     "coverage": "npm test -- --reporter html > test/coverage.html && open test/coverage.html",
-    "prepublish": "gulp build",
+    "prepublish": "npm run snyk-protect; gulp build",
     "dev": "gulp dev",
     "dev-db": "node dev/go.js",
-    "repl": "rc /tmp/repl/www-15443.sock"
+    "repl": "rc /tmp/repl/www-15443.sock",
+    "snyk-protect": "snyk protect"
   },
   "author": "npm, Inc. <support@npmjs.com>",
   "license": "ISC",
@@ -88,7 +89,8 @@
     "stylus": "^0.45.0",
     "tipsy-browserify": "^1.0.0",
     "truncate": "^1.0.4",
-    "validate-npm-package-name": "^1.2.0"
+    "validate-npm-package-name": "^1.2.0",
+    "snyk": "^1.46.0"
   },
   "devDependencies": {
     "bistre": "^1.0.0",
@@ -113,5 +115,6 @@
     "sinon": "^1.10.3",
     "touch": "0.0.3",
     "vinyl-source-stream": "^0.1.1"
-  }
+  },
+  "snyk": true
 }
